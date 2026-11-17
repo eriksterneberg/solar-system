@@ -55,5 +55,30 @@ where no usable photographic global maps exist. Full per-file sources and licenc
 [`assets/CREDITS.md`](assets/CREDITS.md) and [`assets/manifest.json`](assets/manifest.json); the app shows them
 in its About panel. three.js is MIT-licensed.
 
-`tools/` holds the scripts that converted the raw downloads into `assets/`. The raw downloads (~1.2 GB) are not
-in the repository.
+## Rebuilding the assets (optional)
+
+You do **not** need anything beyond this repository to run the app: `assets/` already contains the finished,
+web-sized images and data. The original downloads (about 3 GB) are only needed if you want to regenerate
+`assets/` — for example to change resolution or colour processing — so they are not committed.
+
+To fetch them into `raw/` (skips files you already have):
+
+```bash
+tools/fetch_raw.sh
+```
+
+Then run the conversion scripts with Python 3 (`pip install numpy pillow tifffile imagecodecs`):
+
+| Script | Reads from `raw/` | Writes to `assets/` |
+|---|---|---|
+| `tools/process_small.py` | `moon/`, `jupiter/`, `sss/` | Moon, Jupiter, Saturn, its rings, Venus, Uranus, Neptune |
+| `tools/process_rest.py` | `mercury/`, `mars/`, `titan/`, `galilean/` | Mercury, Mars, Titan, the Galilean moons |
+| `tools/make_pluto_charon.py` | `pluto/`, `charon/` | Pluto (New Horizons mosaic + colour), Charon |
+| `tools/make_smallbodies.py` | `mpc/MPCORB.DAT.gz` | `data/smallbodies.bin` / `.json` (asteroid and Kuiper belts) |
+| `tools/make_spacecraft.py` | `misc/h*.json` (JPL Horizons) | `data/spacecraft.json` |
+| `tools/make_manifest.py` | `assets/` | `manifest.json` |
+
+Not covered by these scripts: the Earth maps (`earth_*`) and the sky (`sky/`) were prepared in a sibling project
+and copied in. Their sources are NASA Blue Marble Next Generation (July) and Black Marble
+([visibleearth.nasa.gov](https://visibleearth.nasa.gov/collection/1484/blue-marble)), the NASA SVS Deep Star Maps
+2020 ([svs.gsfc.nasa.gov/4851](https://svs.gsfc.nasa.gov/4851)) and the Yale Bright Star Catalogue.
