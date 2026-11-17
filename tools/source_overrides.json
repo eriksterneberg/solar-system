@@ -1,0 +1,30 @@
+{
+ "tex/galilean/io.jpg": {
+  "source": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+  "note": "Galileo SSI/Voyager colour-merged global mosaic 1 km; rolled 180 deg (source left edge = 0 E)"
+ },
+ "tex/galilean/ganymede.jpg": {
+  "source": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+  "note": "colour mosaic 1.435 km; rolled 180 deg (source left edge = 0 E)"
+ },
+ "tex/galilean/europa.jpg": {
+  "note": "monochrome (no colour global mosaic obtained); rolled 180 deg (source left edge = 0 E)"
+ },
+ "tex/galilean/callisto.jpg": {
+  "note": "monochrome (no colour global mosaic obtained); rolled 180 deg (source left edge = 0 E)"
+ },
+ "tex/mercury.jpg": {
+  "note": "DERIVED: MDIS enhanced-colour mosaic with chroma reduced to 22% and warm tint so it reads as natural grey-brown; downsampled to 4096x2048. Full-strength version: tex/mercury_enhanced.jpg"
+ },
+ "tex/mercury_enhanced.jpg": {
+  "source": "https://planetarymaps.usgs.gov/mosaic/Mercury_MESSENGER_MDIS_Basemap_EnhancedColor_Mosaic_Global_665m.tif",
+  "licence": "Public domain (NASA/USGS)",
+  "attribution": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington; USGS Astrogeology Science Center",
+  "note": "EXTRA (not in contract): full-strength enhanced colour (false colour)"
+ },
+ "tex/saturn_ring.png": {
+  "radius_inner_km": 74500,
+  "radius_outer_km": 140200,
+  "note": "2048x125 resampled to 2048x64 (premultiplied); source strip verified to span 74,500-140,200 km: Cassini Division (117,580-122,170 km) falls at px ~1340-1483 and A-ring outer edge (136,775 km) at px ~1941 of 2048"
+ }
+}

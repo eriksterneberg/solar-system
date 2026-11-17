@@ -1,0 +1,140 @@
+{
+ "file": "smallbodies.bin",
+ "dtype": "float32 little-endian",
+ "record_floats": 8,
+ "record_layout": [
+  "a_AU",
+  "e",
+  "i_deg",
+  "Omega_deg",
+  "omega_deg",
+  "M_deg_at_epoch",
+  "epoch_JD_TT",
+  "H_absmag"
+ ],
+ "angles": "ecliptic J2000 heliocentric osculating elements; M is mean anomaly at the per-object epoch (column 7); epochs differ per object (mostly 2026 MPC epoch); propagate with n = 0.9856076686/a^1.5 deg/day",
+ "counts": {
+  "total": 68325,
+  "inner_subsample_a_le_30": 60000,
+  "trans_neptunian_a_gt_30": 8325,
+  "parsed_from_MPCORB": 1581219
+ },
+ "order": "first 60000 records are the random (seed 42) a<=30 AU subsample sorted by MPC file order; remaining records are all a>30 AU with e<1",
+ "source": "Minor Planet Center MPCORB.DAT (minorplanetcenter.net/iau/MPCORB.html), downloaded 2026-11-17",
+ "licence": "MPC data, free for scientific/public use; credit Minor Planet Center / IAU",
+ "float32_note": "epoch JD (~2.46e6) stored as float32 has resolution of 0.25 day; fine for display",
+ "a_histogram_inner_subsample": {
+  "0-1": 133,
+  "1-1.7": 753,
+  "1.7-2.0": 1776,
+  "2.0-2.5": 15879,
+  "2.5-2.82": 21006,
+  "2.82-3.3": 19129,
+  "3.3-4": 599,
+  "4-5.5": 678,
+  "5.5-6": 11,
+  "6-10": 14,
+  "10-30": 22
+ },
+ "a_histogram_trans_neptunian": {
+  "30-35": 206,
+  "35-40": 1266,
+  "40-45": 3022,
+  "45-50": 1585,
+  "50-60": 865,
+  "60-100": 947,
+  "100-200": 308,
+  "200-500": 93,
+  "500-100000.0": 33
+ },
+ "named": {
+  "Ceres": {
+   "a": 2.7655526,
+   "e": 0.0796923,
+   "i": 10.58803,
+   "Omega": 80.24863,
+   "omega": 73.2942,
+   "M": 274.41935,
+   "epoch_JD": 2461200.5,
+   "name": "Ceres",
+   "H": 3.34
+  },
+  "Vesta": {
+   "a": 2.361366,
+   "e": 0.0902037,
+   "i": 7.14393,
+   "Omega": 103.70135,
+   "omega": 151.46856,
+   "M": 81.19019,
+   "epoch_JD": 2461200.5,
+   "name": "Vesta",
+   "H": 3.25
+  },
+  "Sedna": {
+   "a": 543.7105618,
+   "e": 0.8598803,
+   "i": 11.92528,
+   "Omega": 144.50581,
+   "omega": 311.09923,
+   "M": 358.59566,
+   "epoch_JD": 2461200.5,
+   "name": "Sedna",
+   "H": 1.5
+  },
+  "Pluto": {
+   "a": 39.3386679,
+   "e": 0.2476521,
+   "i": 17.17591,
+   "Omega": 110.33632,
+   "omega": 113.0707,
+   "M": 53.93388,
+   "epoch_JD": 2461200.5,
+   "name": "Pluto",
+   "H": -0.59
+  },
+  "Haumea": {
+   "a": 43.060577,
+   "e": 0.1944357,
+   "i": 28.20849,
+   "Omega": 121.78627,
+   "omega": 240.6906,
+   "M": 223.20953,
+   "epoch_JD": 2461200.5,
+   "name": "Haumea",
+   "H": 0.14
+  },
+  "Eris": {
+   "a": 67.934856,
+   "e": 0.4382371,
+   "i": 43.92597,
+   "Omega": 36.0047,
+   "omega": 150.79139,
+   "M": 211.78226,
+   "epoch_JD": 2461200.5,
+   "name": "Eris",
+   "H": -1.26
+  },
+  "Makemake": {
+   "a": 45.5712208,
+   "e": 0.1588848,
+   "i": 29.02785,
+   "Omega": 79.29501,
+   "omega": 297.09341,
+   "M": 169.93633,
+   "epoch_JD": 2461200.5,
+   "name": "Makemake",
+   "H": -0.25
+  },
+  "Arrokoth": {
+   "a": 44.0527328,
+   "e": 0.0355969,
+   "i": 2.45059,
+   "Omega": 159.03838,
+   "omega": 188.87779,
+   "M": 310.96107,
+   "epoch_JD": 2461200.5,
+   "name": "Arrokoth",
+   "H": 11.06
+  }
+ }
+}

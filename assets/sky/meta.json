@@ -1,0 +1,14 @@
+{
+ "K_milkyway": 3.4,
+ "K_stars": 3.0,
+ "center_ra_deg": 0.0,
+ "ra_increases_left": true,
+ "dec_top_deg": 90,
+ "equirect": "RA/Dec (J2000 celestial), north up, image 8192x4096",
+ "transfer": "v = clamp((linear*K)**(1/2.2),0,1)",
+ "milkyway_source": "milkyway_2020_8k.exr",
+ "stars_source": "hiptyc_2020_8k.exr",
+ "source_url": "https://svs.gsfc.nasa.gov/4851",
+ "licence": "NASA SVS, public domain (credit: NASA/Goddard Space Flight Center Scientific Visualization Studio; Tycho/Hipparcos star catalogs)",
+ "orientation_check": "Matched 18 bright stars (Sirius, Canopus, Arcturus, Vega, ...) to local maxima; best score 17.9/18 for RA-increases-left, centre RA 0 deg (next best hypothesis 3.2/18). Sirius found at px (1789,2427), Canopus (1909,3245), Arcturus (7418,1610), Vega (5932,1164), Capella (2292,999), Rigel (2306,2233); all within ~2 px of prediction col=4096-RA_offset*8192/360 (RA from centre), row=(90-dec)/180*4096. Galactic centre (RA266.4,Dec-29) predicted px (6226,2708); brightest blurred Milky Way cloud near that row at col 6123."
+}

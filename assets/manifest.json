@@ -1,0 +1,363 @@
+{
+ "generated": "2026-11-17",
+ "files": [
+  {
+   "path": "data/smallbodies.bin",
+   "bytes": 2186400,
+   "source": "https://www.minorplanetcenter.net/iau/MPCORB/MPCORB.DAT.gz",
+   "licence": "Free for public/scientific use (MPC)",
+   "attribution": "Minor Planet Center / IAU",
+   "note": "see data/smallbodies.json"
+  },
+  {
+   "path": "data/smallbodies.json",
+   "bytes": 3039,
+   "source": "derived from MPCORB",
+   "licence": "Free for public/scientific use (MPC)",
+   "attribution": "Minor Planet Center / IAU",
+   "note": ""
+  },
+  {
+   "path": "data/spacecraft.json",
+   "bytes": 1468,
+   "source": "https://ssd.jpl.nasa.gov/api/horizons.api",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL Horizons System",
+   "note": "2026-11-17 00:00 TDB"
+  },
+  {
+   "path": "sky/meta.json",
+   "bytes": 1052,
+   "source": "apollo11-hd",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "",
+   "note": ""
+  },
+  {
+   "path": "sky/milkyway.jpg",
+   "bytes": 12402407,
+   "pixels": [
+    8192,
+    4096
+   ],
+   "mode": "RGB",
+   "source": "https://svs.gsfc.nasa.gov/4851",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/Goddard Space Flight Center Scientific Visualization Studio; Tycho/Hipparcos star catalogs",
+   "note": "copied from apollo11-hd; 8192x4096 RA/Dec equirect, see sky/meta.json"
+  },
+  {
+   "path": "sky/stars.bin",
+   "bytes": 140432,
+   "source": "https://svs.gsfc.nasa.gov/4851 (Hipparcos/Tycho)",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "ESA Hipparcos/Tycho catalogues; NASA SVS",
+   "note": "float32 LE [RA deg, Dec deg, Vmag, Kelvin]"
+  },
+  {
+   "path": "tex/charon.jpg",
+   "bytes": 297698,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Charon_NewHorizons_Global_Mosaic_300m_Jul2017_8bit.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JHUAPL/SwRI; USGS Astrogeology",
+   "note": "monochrome mosaic (slight warm-neutral tint added), rolled 180 deg; unseen south filled neutral"
+  },
+  {
+   "path": "tex/earth_clouds.jpg",
+   "bytes": 2485239,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "L",
+   "source": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA Blue Marble cloud composite",
+   "note": "greyscale; downsampled from apollo11-hd"
+  },
+  {
+   "path": "tex/earth_day.jpg",
+   "bytes": 1294607,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://visibleearth.nasa.gov/collection/1484/blue-marble",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA Earth Observatory, Blue Marble Next Generation (Reto Stockli)",
+   "note": "copied/downsampled from apollo11-hd"
+  },
+  {
+   "path": "tex/earth_night.jpg",
+   "bytes": 569870,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://earthobservatory.nasa.gov/features/NightLights",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA Earth Observatory, Black Marble 2016 (NASA/Goddard/NOAA/Roman Wang)",
+   "note": "downsampled from apollo11-hd"
+  },
+  {
+   "path": "tex/earth_water.png",
+   "bytes": 123475,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "L",
+   "source": "derived",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "derived from NASA Blue Marble + GEBCO/NASA NEO; 255=water",
+   "note": "resized 4096x2048 -> 2048x1024"
+  },
+  {
+   "path": "tex/galilean/callisto.jpg",
+   "bytes": 423626,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL/USGS Astrogeology (Galileo SSI/Voyager)",
+   "note": "monochrome (no colour global mosaic obtained); rolled 180 deg (source left edge = 0 E)"
+  },
+  {
+   "path": "tex/galilean/europa.jpg",
+   "bytes": 516165,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL/USGS Astrogeology (Galileo SSI/Voyager)",
+   "note": "monochrome (no colour global mosaic obtained); rolled 180 deg (source left edge = 0 E)"
+  },
+  {
+   "path": "tex/galilean/ganymede.jpg",
+   "bytes": 469464,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL/USGS Astrogeology (Galileo SSI/Voyager)",
+   "note": "colour mosaic 1.435 km; rolled 180 deg (source left edge = 0 E)"
+  },
+  {
+   "path": "tex/galilean/io.jpg",
+   "bytes": 429181,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL/USGS Astrogeology (Galileo SSI/Voyager)",
+   "note": "Galileo SSI/Voyager colour-merged global mosaic 1 km; rolled 180 deg (source left edge = 0 E)"
+  },
+  {
+   "path": "tex/jupiter.jpg",
+   "bytes": 844095,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://science.nasa.gov/photojournal/cassinis-best-maps-of-jupiter-cylindrical-map (PIA07782)",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL/Space Science Institute (Cassini ISS)",
+   "note": "native 3601x1801 upsampled (Lanczos) to 4096x2048"
+  },
+  {
+   "path": "tex/mars.jpg",
+   "bytes": 1009078,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL/USGS Astrogeology; Viking Orbiter global colour mosaic (925 m/px)",
+   "note": "23059x11530 downsampled"
+  },
+  {
+   "path": "tex/mercury.jpg",
+   "bytes": 2862304,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Mercury_MESSENGER_MDIS_Basemap_EnhancedColor_Mosaic_Global_665m.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington; USGS Astrogeology Science Center. MESSENGER MDIS enhanced-colour global mosaic (665 m/px).",
+   "note": "DERIVED: MDIS enhanced-colour mosaic with chroma reduced to 22% and warm tint so it reads as natural grey-brown; downsampled to 4096x2048. Full-strength version: tex/mercury_enhanced.jpg"
+  },
+  {
+   "path": "tex/mercury_enhanced.jpg",
+   "bytes": 3072835,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Mercury_MESSENGER_MDIS_Basemap_EnhancedColor_Mosaic_Global_665m.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington; USGS Astrogeology Science Center",
+   "note": "EXTRA (not in contract): full-strength enhanced colour (false colour)"
+  },
+  {
+   "path": "tex/moon.jpg",
+   "bytes": 1786643,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://svs.gsfc.nasa.gov/4720 (lroc_color_poles_4k.tif)",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/Goddard Space Flight Center Scientific Visualization Studio; LRO/LROC WAC (NASA/GSFC/Arizona State University), CGI Moon Kit",
+   "note": "as supplied, 4096x2048, centred on 0 deg longitude"
+  },
+  {
+   "path": "tex/moon_height.jpg",
+   "bytes": 427752,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "L",
+   "source": "https://svs.gsfc.nasa.gov/4720 (ldem_16_uint.tif)",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/GSFC SVS; LRO LOLA (NASA/GSFC/MIT)",
+   "note": "16-bit LDEM 5760x2880 downsampled to 2048x1024, linearly stretched 0.2-99.8 percentile (raw uint16 DN 6626..34310) to 8-bit grey; relative height only, absolute scale per SVS 4720 not applied"
+  },
+  {
+   "path": "tex/neptune.jpg",
+   "bytes": 91141,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://www.solarsystemscope.com/textures/download/2k_neptune.jpg",
+   "licence": "CC BY 4.0",
+   "attribution": "Textures: Solar System Scope (solarsystemscope.com), CC BY 4.0 (based on NASA data) (Voyager 2)",
+   "note": ""
+  },
+  {
+   "path": "tex/pluto.jpg",
+   "bytes": 1310157,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Pluto_NewHorizons_Global_Mosaic_300m_Jul2017_8bit.tif + https://science.nasa.gov/photojournal/pluto-in-extended-color/ (PIA19956)",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute; USGS Astrogeology",
+   "note": "300 m monochrome LORRI/MVIC mosaic (luminance) coloured with the PIA19956 enhanced colour map; rolled 180 deg; unseen south filled neutral"
+  },
+  {
+   "path": "tex/saturn.jpg",
+   "bytes": 383422,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://www.solarsystemscope.com/textures/download/8k_saturn.jpg",
+   "licence": "CC BY 4.0",
+   "attribution": "Textures: Solar System Scope (solarsystemscope.com), CC BY 4.0 (based on NASA data)",
+   "note": "no public-domain Cassini global colour map of Saturn found; source file is 4096x2048"
+  },
+  {
+   "path": "tex/saturn_ring.png",
+   "bytes": 8284,
+   "pixels": [
+    2048,
+    64
+   ],
+   "mode": "RGBA",
+   "source": "https://www.solarsystemscope.com/textures/download/2k_saturn_ring_alpha.png",
+   "licence": "CC BY 4.0",
+   "attribution": "Textures: Solar System Scope (solarsystemscope.com), CC BY 4.0 (based on NASA data)",
+   "note": "2048x125 resampled to 2048x64 (premultiplied); source strip verified to span 74,500-140,200 km: Cassini Division (117,580-122,170 km) falls at px ~1340-1483 and A-ring outer edge (136,775 km) at px ~1941 of 2048",
+   "radius_inner_km": 74500,
+   "radius_outer_km": 140200
+  },
+  {
+   "path": "tex/titan.jpg",
+   "bytes": 373474,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://planetarymaps.usgs.gov/mosaic/Titan_ISS_P19658_Mosaic_Global_4km.tif",
+   "licence": "Public domain (NASA/USGS)",
+   "attribution": "NASA/JPL-Caltech/Space Science Institute (Cassini ISS 938 nm mosaic, PIA19658); USGS Astrogeology",
+   "note": "monochrome near-IR; rolled 180 deg"
+  },
+  {
+   "path": "tex/uranus.jpg",
+   "bytes": 43685,
+   "pixels": [
+    2048,
+    1024
+   ],
+   "mode": "RGB",
+   "source": "https://www.solarsystemscope.com/textures/download/2k_uranus.jpg",
+   "licence": "CC BY 4.0",
+   "attribution": "Textures: Solar System Scope (solarsystemscope.com), CC BY 4.0 (based on NASA data) (Voyager 2)",
+   "note": ""
+  },
+  {
+   "path": "tex/venus.jpg",
+   "bytes": 509207,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://www.solarsystemscope.com/textures/download/4k_venus_atmosphere.jpg",
+   "licence": "CC BY 4.0",
+   "attribution": "Textures: Solar System Scope (solarsystemscope.com), CC BY 4.0 (based on NASA data)",
+   "note": "Visible-light cloud deck (artistic/composite, not a photograph)"
+  },
+  {
+   "path": "tex/venus_surface.jpg",
+   "bytes": 2073908,
+   "pixels": [
+    4096,
+    2048
+   ],
+   "mode": "RGB",
+   "source": "https://www.solarsystemscope.com/textures/download/8k_venus_surface.jpg",
+   "licence": "CC BY 4.0",
+   "attribution": "Textures: Solar System Scope (solarsystemscope.com), CC BY 4.0 (based on NASA data); Magellan radar data, NASA/JPL",
+   "note": "Magellan radar-based false colour; 8192x4096 downsampled"
+  }
+ ],
+ "vendor": {
+  "path": "../vendor",
+  "note": "three.js r170 (MIT) copied from apollo11-hd/vendor"
+ }
+}

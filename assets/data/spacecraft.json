@@ -1,0 +1,78 @@
+{
+ "source": "JPL Horizons API (ssd.jpl.nasa.gov/api/horizons.api), EPHEM_TYPE=VECTORS, CENTER=@sun (body centre of Sun), REF_PLANE=ECLIPTIC (J2000 mean ecliptic & equinox), geometric states",
+ "epoch": "2026-11-17 00:00 TDB (JD 2461361.5)",
+ "units": {
+  "r_au": "AU",
+  "lon_deg": "ecliptic longitude J2000, 0..360",
+  "lat_deg": "ecliptic latitude J2000",
+  "speed_km_s": "heliocentric"
+ },
+ "licence": "JPL Horizons output, NASA public domain",
+ "spacecraft": [
+  {
+   "id": "-31",
+   "name": "Voyager 1",
+   "r_au": 172.3753,
+   "lon_deg": 256.784,
+   "lat_deg": 35.159,
+   "xyz_au": [
+    -32.2192,
+    -137.1941,
+    99.2621
+   ],
+   "speed_km_s": 16.918
+  },
+  {
+   "id": "-32",
+   "name": "Voyager 2",
+   "r_au": 144.494,
+   "lon_deg": 290.727,
+   "lat_deg": -38.531,
+   "xyz_au": [
+    40.0044,
+    -105.7179,
+    -90.0105
+   ],
+   "speed_km_s": 15.263
+  },
+  {
+   "id": "-23",
+   "name": "Pioneer 10",
+   "r_au": 142.2497,
+   "lon_deg": 80.231,
+   "lat_deg": 2.985,
+   "xyz_au": [
+    24.1044,
+    139.9966,
+    7.4088
+   ],
+   "speed_km_s": 11.848
+  },
+  {
+   "id": "-24",
+   "name": "Pioneer 11",
+   "r_au": 118.2519,
+   "lon_deg": 284.731,
+   "lat_deg": 13.844,
+   "xyz_au": [
+    29.1966,
+    -111.0425,
+    28.2952
+   ],
+   "speed_km_s": 11.141
+  },
+  {
+   "id": "-98",
+   "name": "New Horizons",
+   "r_au": 66.0799,
+   "lon_deg": 288.533,
+   "lat_deg": 1.998,
+   "xyz_au": [
+    20.9912,
+    -62.6148,
+    2.3039
+   ],
+   "speed_km_s": 13.575
+  }
+ ]
+}

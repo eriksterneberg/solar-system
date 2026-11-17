@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Solar System</title>
+<link rel="icon" href="data:,">
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300;color:#e8e8e8;user-select:none;-webkit-user-select:none}
+canvas#c{position:fixed;inset:0;width:100%;height:100%;display:block}
+#labels{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.lbl{position:absolute;left:0;top:0;will-change:transform}
+.lbl span{position:absolute;left:9px;top:-7px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(235,238,245,.55);white-space:nowrap;text-shadow:0 0 4px #000}
+.lbl.craft span{left:14px;color:rgba(160,220,255,.7)}
+.lbl.craft i{position:absolute;left:-6px;top:-6px;width:12px;height:12px;border:1px solid rgba(160,220,255,.7);border-radius:50%}
+#fade{position:fixed;inset:0;background:#000;opacity:1;pointer-events:none;transition:opacity 1.2s ease;z-index:5}
+#cap{position:fixed;left:8%;right:8%;bottom:19%;text-align:center;opacity:0;transition:opacity .45s ease;pointer-events:none;text-shadow:0 1px 3px #000,0 0 18px #000,0 0 40px rgba(0,0,0,.8)}
+#capTitle{font-size:clamp(12px,1.3vw,16px);letter-spacing:.35em;text-transform:uppercase;color:#aab4c8;margin-bottom:.7em}
+#capText{font-size:clamp(18px,2.1vw,30px);line-height:1.4;font-weight:300;color:#f4f2ea;max-width:1100px;margin:0 auto}
+#ro{position:fixed;left:0;right:0;bottom:9.5%;text-align:center;font-size:clamp(11px,1.05vw,14px);letter-spacing:.08em;color:rgba(220,226,238,.7);line-height:1.7;pointer-events:none;transition:opacity 1s;text-shadow:0 0 6px #000}
+#roSpeed{color:rgba(240,225,190,.85)}
+#barWrap{position:fixed;left:7%;right:7%;bottom:3.6%;height:34px;pointer-events:none;transition:opacity 1s}
+#barTrack{position:absolute;left:0;right:0;top:15px;height:1px;background:rgba(220,226,238,.35)}
+.band{position:absolute;top:-3px;height:7px;background:rgba(160,180,220,.16)}
+.tick{position:absolute;top:-4px;width:1px;height:9px;background:rgba(220,226,238,.6)}
+.tl{position:absolute;top:-19px;transform:translateX(-50%);font-size:10px;letter-spacing:.08em;color:rgba(220,226,238,.6);white-space:nowrap;text-shadow:0 0 4px #000}
+.tl.low{top:9px}
+.marker{position:absolute;top:-5px;width:11px;height:11px;margin-left:-6px;border-radius:50%;background:#ffd98a;box-shadow:0 0 10px 2px rgba(255,210,130,.8)}
+#ctl{position:fixed;right:14px;top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:70%;transition:opacity 1s;z-index:3}
+#ctl button{background:rgba(10,14,24,.45);border:1px solid rgba(220,226,238,.35);color:#dde3ee;font:300 13px "Helvetica Neue",Arial,sans-serif;letter-spacing:.12em;padding:7px 12px;cursor:pointer;border-radius:2px}
+#ctl button:hover{border-color:#fff;color:#fff}
+#ctl button.go{border-color:#ffd98a;color:#ffd98a}
+#hud{position:fixed;left:14px;top:12px;font-size:12px;letter-spacing:.12em;color:rgba(220,226,238,.7);text-shadow:0 0 4px #000;pointer-events:none;z-index:3;transition:opacity 1s}
+#hint{position:fixed;left:0;right:0;top:11%;text-align:center;font-size:clamp(13px,1.4vw,18px);letter-spacing:.1em;opacity:0;transition:opacity 1.2s;pointer-events:none;text-shadow:0 0 8px #000;color:#ddd}
+#lang2{position:fixed;left:14px;bottom:12px;font-size:11px;letter-spacing:.15em;z-index:3;transition:opacity 1s}
+#lang2 span,#aboutBtn{cursor:pointer;color:rgba(220,226,238,.55);margin-right:10px}
+#lang2 span.on{color:#fff}
+body.prestart #ctl,body.prestart #barWrap,body.prestart #lang2,body.prestart #labels,body.prestart #ro{display:none}
+body.idle #ctl,body.idle #ro,body.idle #barWrap,body.idle #hud,body.idle #lang2,body.idle #cap{opacity:0!important}
+body.idlectl #ctl,body.idlectl #lang2{opacity:.0}
+#start{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.45),rgba(0,0,0,.88));text-align:center;z-index:10;transition:opacity 1.2s;overflow:auto}
+#start.ready{cursor:pointer}
+#start h1{font-weight:200;letter-spacing:.35em;font-size:clamp(26px,5vw,64px);margin:0 0 .2em 0;text-transform:uppercase;padding-left:.35em}
+#start h2{font-weight:300;letter-spacing:.2em;font-size:clamp(12px,1.5vw,19px);margin:0 0 .5em;color:#bbb;text-transform:uppercase;padding:0 1em}
+#start .real{font-size:clamp(11px,1.1vw,14px);letter-spacing:.12em;color:#889;margin-bottom:2em}
+#start .go{font-size:clamp(16px,1.8vw,24px);letter-spacing:.3em;border:1px solid #888;padding:.7em 1.6em;margin-bottom:2em;text-transform:uppercase;opacity:.28;transition:opacity .6s}
+#start.ready .go{opacity:1;animation:pulse 2.4s infinite}
+#keys{display:flex;gap:2.4em;flex-wrap:wrap;justify-content:center;font-size:clamp(11px,1.05vw,14px);line-height:1.8;color:#aaa;letter-spacing:.05em;text-align:left;padding:0 1em}
+#keys h3{margin:0 0 .4em;font-weight:400;font-size:.9em;letter-spacing:.25em;text-transform:uppercase;color:#778}
+#keys div.r{display:grid;grid-template-columns:7em 1fr;column-gap:1em}
+#keys b{color:#eee;font-weight:500;text-align:right}
+#lang{margin-top:1.6em;font-size:clamp(12px,1.2vw,16px);letter-spacing:.15em}
+#lang span{display:inline-block;padding:.45em 1.1em;margin:0 .4em;border:1px solid #555;color:#999;cursor:pointer}
+#lang span.on{border-color:#ddd;color:#fff}
+#loadwrap{margin-top:1.2em;width:min(300px,60vw)}
+#bar{height:2px;background:#333;position:relative;overflow:hidden}
+#bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#bbb;transition:width .4s;display:block}
+#loading{margin-top:.7em;font-size:12px;color:#888;letter-spacing:.15em;min-height:1.4em}
+.alink{cursor:pointer;font-size:12px;letter-spacing:.15em;text-decoration:underline;color:#99a}
+#aboutBtn{margin-top:1em;font-size:12px;letter-spacing:.15em;text-decoration:underline}
+#about{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:20}
+#aboutIn{width:min(760px,90vw);max-height:80vh;display:flex;flex-direction:column;border:1px solid #444;background:#05070c;padding:1.2em 1.6em}
+#aboutIn h3{margin:0 0 .8em;font-weight:300;letter-spacing:.25em;text-transform:uppercase;font-size:14px}
+#aboutBody{overflow:auto;font-size:13px;line-height:1.55;color:#bbb;user-select:text;-webkit-user-select:text;white-space:pre-wrap;word-break:break-word}
+#aboutBody .h{color:#eee;margin-top:.8em;font-weight:400}
+#aboutIn button{align-self:flex-end;margin-top:1em;background:none;border:1px solid #666;color:#ddd;padding:.5em 1.2em;letter-spacing:.15em;cursor:pointer}
+@keyframes pulse{50%{opacity:.5}}
+#err{position:fixed;left:10px;bottom:10px;color:#f66;font:12px monospace;white-space:pre-wrap;z-index:99}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head><body class="prestart">
+<canvas id="c"></canvas>
+<div id="labels"></div>
+<div id="cap"><div id="capTitle"></div><div id="capText"></div></div>
+<div id="ro"><div id="roDist"></div><div id="roLight"></div><div id="roSpeed"></div></div>
+<div id="barWrap"><div id="barTrack"></div></div>
+<div id="hud"><span id="state"></span> <span id="time"></span></div>
+<div id="ctl"></div>
+<div id="hint"></div>
+<div id="lang2"><span data-lang="en">EN</span><span data-lang="sv">SV</span><span id="aboutBtn" data-i18n="about"></span></div>
+<div id="fade"></div>
+<div id="start"><h1 data-i18n="title"></h1><h2 data-i18n="h2"></h2><div class="real" data-i18n="real"></div>
+<div class="go" id="go" data-i18n="go"></div>
+<div id="keys">
+<div><h3 data-i18n="kVoyage"></h3>
+<div class="r"><b data-i18n="kSpace"></b><span data-i18n="cPause"></span></div>
+<div class="r"><b>← →</b><span data-i18n="cSkip"></span></div>
+<div class="r"><b data-i18n="kMouse"></b><span data-i18n="cLook"></span></div>
+<div class="r"><b>F</b><span data-i18n="cFree"></span></div></div>
+<div><h3 data-i18n="kFlight"></h3>
+<div class="r"><b>W A S D</b><span data-i18n="cFly"></span></div>
+<div class="r"><b>Q E</b><span data-i18n="cUpDown"></span></div>
+<div class="r"><b data-i18n="kShift"></b><span data-i18n="cBoost"></span></div>
+<div class="r"><b data-i18n="kWheel"></b><span data-i18n="cSpeed"></span></div>
+<div class="r"><b>1 – 9, 0</b><span data-i18n="cGoto"></span></div>
+<div class="r"><b>V</b><span data-i18n="cBack"></span></div></div>
+<div><h3 data-i18n="kMore"></h3>
+<div class="r"><b>L</b><span data-i18n="cLabels"></span></div>
+<div class="r"><b>O</b><span data-i18n="cOrbits"></span></div>
+<div class="r"><b>T</b><span data-i18n="cTime"></span></div>
+<div class="r"><b>M</b><span data-i18n="cMusic"></span></div>
+<div class="r"><b>R</b><span data-i18n="cRestart"></span></div></div>
+</div>
+<div id="lang"><span data-lang="en">English</span><span data-lang="sv">Svenska</span></div>
+<div id="loadwrap"><div id="bar"><i></i></div><div id="loading"></div></div>
+<div style="margin-top:1.1em"><span id="aboutBtn0" class="alink" data-i18n="about"></span></div></div>
+<div id="about"><div id="aboutIn"><h3 data-i18n="aboutTitle"></h3><div id="aboutBody"></div><button id="aboutClose" data-i18n="close"></button></div></div>
+<div id="err"></div>
+<script type="module" src="js/app.js"></script>
+</body></html>
